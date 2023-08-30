@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--------- Main image with name --------->
+    <main>
+      <div class="_main_page">
+        <div class="floating-text">
+          <span class="leader_name .floating-text-content">Ratan Tata</span>
+        </div>
+        <img src="./pngwing.com.png" id="main_img" />
+      </div>
+
+      <span class="float_logo">
+        <a href="https://www.tatamotors.com/"><img src="./logo.jpg" alt="logo" /></a>
+      </span>
+    </main>
+
+    <!------ Quotes chagining section ------>
+    <section>
+      <div class="quote-container">
+        <div class="quote" id="quote"></div>
+      </div>
+    </section>
+
+    <!------- Section 2 ------>
+    <div id="section_2">
+      <h1>A Visionary Leader and Philanthropist</h1>
+      <p>
+        Ratan Tata was born on December 28, 1937, into the prominent Tata
+        family, known for their business legacy. He completed his education in
+        India and abroad, earning a degree in architecture from Cornell
+        University and later attending the Harvard Business School. His diverse
+        educational background laid the foundation for his multifaceted approach
+        to business and innovation.
+      </p>
+    </div>
+
+    <!------- section 3 ------>
+    <div id="section_3">
+      <div>
+        <h1>Personal Values and Humility</h1>
+        <p>
+          Despite his towering achievements, Ratan Tata has always remained
+          grounded and approachable. His humility and commitment to ethical
+          business practices have set an example for generations to come
+        </p>
+      </div>
+      <div id="s_3">
+        <img src="./ratan_tata.png" alt="Quotes" />
+      </div>
+    </div>
+
+    <!------ Section 4 ------>
+    <div id="section_2">
+      <h1 style="margin-left: -50px">Philanthropy and Giving Back</h1>
+      <p>
+        Ratan Tata's philanthropic endeavors have left an enduring impact on
+        society. The Tata Trusts, under his guidance, have been at the forefront
+        of numerous initiatives aimed at education, healthcare, and rural
+        development. The establishment of the Tata Medical Center and the Tata
+        Institute of Social Sciences (TIISS) showcases his dedication to
+        addressing critical social challenges.
+      </p>
+    </div>
+
+    <!------ Section 5 ------>
+    <!---------- Know More ON click button part ---------->
+    <!-- On click button display content -->
+    <div style="display: flex; justify-content: center; align-items: center">
+      <button id="revealButton" onclick="revealContent()">
+        <img src="./arrow.png" alt="arrow" />
+      </button>
+    </div>
+
+    <!----- This Content visible after Click arrow button ------>
+    <div id="hiddenContent" style="display: none">
+      <!-- paragraph 1 -->
+      <h1 style="margin-left: -50px">
+        Ethical Leadership and Corporate Social Responsibility
+      </h1>
+      <p>
+        Ratan Tata was known for his strong commitment to ethical business
+        practices and corporate social responsibility (CSR). He emphasized the
+        importance of doing business with integrity and serving the community.
+        This commitment was not just rhetoric; it was reflected in the group's
+        initiatives. Under his leadership, Tata companies undertook numerous CSR
+        projects in areas such as healthcare, education, and rural development.
+        One of the significant milestones in this regard was the launch of the
+        Tata Nano, which aimed to provide affordable transportation to millions
+        of Indians. This project showcased Ratan Tata's dedication to improving
+        the quality of life for ordinary citizens.
+      </p>
+
+      <!-- paragraph 2 -->
+      <h1 style="margin-top: 100px">Awards and Recognitions</h1>
+      <p>
+        Ratan Tata's contributions to business, industry, and society have been
+        widely recognized. He has received numerous awards and honors, including
+        the Padma Bhushan and Padma Vibhushan, two of India's highest civilian
+        awards. He has also been recognized by international institutions for
+        his leadership and vision.
+      </p>
+
+      <!-- paragraph 3 -->
+      <h1 style="margin-top: 100px">Continued Influence</h1>
+      <p>
+        Even after his retirement as Chairman of the Tata Group, Ratan Tata
+        continues to be an influential figure. His insights and advice are
+        sought by entrepreneurs, business leaders, and policymakers alike. He is
+        known for his progressive views on innovation, technology, and
+        sustainability.
+      </p>
+    </div>
+
+    <!----- Section 6 ----->
+    <div>
+      <img src="./1520130744031.jpg" alt="ratan tata" id="second_img" />
+    </div>
+
+    <!----- Footer final Section  ------>
+    <footer>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Ratan_Tata" target="_blank"
+          >Click here! for more details about Ratan Tata</a
+        >
+      </p>
+    </footer>
+
+    <!----- Script ------>
+    <script>
+      // display Content on click arrow Button in section 5
+      function revealContent() {
+        var content = document.getElementById("hiddenContent");
+        content.style.display = "block";
+      }
+
+      //   In main section changing quotes
+      const quotes = [
+        "'I may have hurt some people along the way, but I would like to be seen as somebody who has done his best to do the right thing for any situation I have been in.'",
+        "'Take the stones people throw at you, and use them to build a monument.'",
+        "'I don't believe in taking the right decisions. I take decisions and then make them right.'",
+      ];
+
+      //   select quote element
+      const quoteElement = document.getElementById("quote");
+      let currentIndex = 0;
+
+      // changing index
+      function changeQuote() {
+        quoteElement.textContent = quotes[currentIndex];
+        currentIndex = (currentIndex + 1) % quotes.length;
+      }
+
+      changeQuote(); // Initial quote setup
+      setInterval(changeQuote, 6000); // Change quote every 5 seconds
+    </script>
+  </body>
+</html>
